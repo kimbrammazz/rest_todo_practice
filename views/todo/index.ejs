@@ -12,15 +12,17 @@
 		<% for (let item of todo) { %>
 			<li>
 				<section>
-					<h2>
-						<%= item.task %>
-					</h2>
-					<p>- <%= item.description %>
-					</p>
+
+					<%= item.task %> <a href="/todo/details">Details</a>
+
+						<p>- <%= item.description %>
+						</p>
+
 				</section>
 			</li>
 			<% } %>
 	</ul>
+	<a href="/todo/add">Add new task</a>
 </body>
 
 </html>
