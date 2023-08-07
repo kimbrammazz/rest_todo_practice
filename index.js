@@ -38,15 +38,24 @@ app.get("/todo", (req, res) => {
 	res.render("todo/index", { todo });
 });
 
+// add a new todo
 app.get("/todo/add", (req, res) => {
 	res.render("todo/add");
 });
 
+// form to add new todo
 app.post("/todo", (req, res) => {
 	// console.log(req.body);
 	const { task, description } = req.body;
 	todo.push({ task, description, id: uuid() });
 	res.redirect("/todo");
+});
+
+// show details of task
+app.get("/todo/:id", (req, res) => {
+	const { id } = req.params;
+	const currentTask = todo.find((t) => t.id === id);
+	res.render("todo/details", { currentTask });
 });
 
 app.listen(3000, () => {

@@ -11,14 +11,7 @@
 	<ul>
 		<% for (let item of todo) { %>
 			<li>
-				<section>
-
-					<%= item.task %> <a href="/todo/details">Details</a>
-
-						<p>- <%= item.description %>
-						</p>
-
-				</section>
+				<%= item.task %> <a href="/todo/<%= item.id %>">Details</a>
 			</li>
 			<% } %>
 	</ul>
