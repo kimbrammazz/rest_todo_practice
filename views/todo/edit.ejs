@@ -1,0 +1,24 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<form action="/todo/_method=PATCH" method="POST">
+		<h1>Add new task</h1>
+		<section><label for="task">Task name</label>
+			<input type="text" name="task" id="task" value="<%= currentTask.task %>">
+		</section>
+		<section>
+			<label for="description">Task description</label><br>
+			<textarea name="description" id="description" cols="30" rows="5"><%= currentTask.description %></textarea>
+		</section>
+		<button>Update</button>
+	</form>
+	<a href="/todo">Cancel</a>
+</body>
+
+</html>

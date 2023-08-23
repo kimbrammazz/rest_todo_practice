@@ -58,6 +58,13 @@ app.get("/todo/:id", (req, res) => {
 	res.render("todo/details", { currentTask });
 });
 
+// form to edit details of a task
+app.get("/todo/:id/edit", (req, res) => {
+	const { id } = req.params;
+	const currentTask = todo.find((t) => t.id === id);
+	res.render("todo/edit", { currentTask });
+});
+
 app.listen(3000, () => {
 	console.log("listening on port 3000");
 });
