@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	<form action="/todo/_method=PATCH" method="POST">
+	<form action="/todo/<%= currentTask.id %>?_method=PATCH" method="POST">
 		<h1>Add new task</h1>
 		<section><label for="task">Task name</label>
 			<input type="text" name="task" id="task" value="<%= currentTask.task %>">
